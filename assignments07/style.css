@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+
+    animation: pulse 3s infinite ease-in-out;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animated Button */
+.animated-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    background: #ff5722;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.animated-btn:hover {
+    transform: scale(1.15);
+}
+
+/* Flip Card */
+.card-container {
+    margin-top: 80px;
+    perspective: 1000px;
+}
+
+.card {
+    width: 250px;
+    height: 150px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    color: white;
+    border-radius: 10px;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    background: #2196f3;
+}
+
+.card-back {
+    background: #4caf50;
+    transform: rotateY(180deg);
+}
